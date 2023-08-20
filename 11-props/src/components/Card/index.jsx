@@ -1,7 +1,7 @@
 import Button from "../Button/index";
-import styles from "../styles.module.css";
+import styles from "./styles.module.css";
 
-export function Card() {
+export default function Card(props) {
   return (
     <main
       style={{
@@ -15,11 +15,11 @@ export function Card() {
       }}
     >
       <div className={styles.Card}>
-        <img src="./src/imgs/starWars.jpg" alt="" />
+        <img src="./src/assets/imgs/starWars.jpg" alt="" />
       </div>
       <div className={styles.description__container}>
         <h1 className={styles.descritpion__title} style={{ fontSize: "3rem" }}>
-          Pôster Star Wars (1977)
+          {props.title}
         </h1>
         <p className={styles.description__paragraph}>
           Um pôster decorativo épico do filme Star Wars, com moldura de MDF e
@@ -28,7 +28,7 @@ export function Card() {
           magia de Star Wars para qualquer lugar que você decidir pendurar. Não
           perca a chance de adicionar essa linda memória ao seu acervo!
         </p>
-        <Button />
+        <Button text="comprar agora" />
       </div>
     </main>
   );
