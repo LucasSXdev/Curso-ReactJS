@@ -1,6 +1,11 @@
 export default function App() {
   return (
-    <div>
+    <div
+      style={{
+        backgroundColor: "silver",
+        textAlign: "center",
+      }}
+    >
       <img src="./public/react.png" alt="" />
       <h1>React</h1>
       <p>A biblioteca para interfaces web e nativas</p>
@@ -31,3 +36,6 @@ export default function App() {
     </div>
   );
 }
+
+//podemos aplicar estilo diretamente na tag utilizando chaves e dentro um objeto com nome das propriedades css na sintaxe de javascript.
+//podemos utilizar o css atraves do module.css que será um arquivo para estilização usando o css mesmo.
