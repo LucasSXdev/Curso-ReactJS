@@ -1,0 +1,39 @@
+.cardProfile {
+  width: 25vw;
+  height: 80vh;
+  padding: 10px 0;
+  border-radius: 20px;
+  background-color: white;
+  text-align: center;
+}
+
+.title {
+  margin: 15px 0 15px 0;
+}
+
+hr {
+  border: 1px solid aquamarine;
+}
+
+.description {
+  font-size: 1.2rem;
+  padding: 10px;
+}
+
+.avatarProfile {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.button {
+  margin: 10px auto;
+  padding: 10px;
+  background-color: blue;
+  color: white;
+  width: 150px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  display: block;
+}
