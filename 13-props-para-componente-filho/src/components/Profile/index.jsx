@@ -1,6 +1,7 @@
 import styles from "./styles.module.css";
 import Title from "../Title";
 import Button from "../Button";
+import ProfileSection from "../ProfileSection";
 
 export default function Profile(props) {
   return (
@@ -10,14 +11,19 @@ export default function Profile(props) {
         <span>{props.name}</span>
         <button>Follow me</button>
       </Title>
-      <div>{props.bio}</div>
-      <div>{props.phone}</div>
-      <div>{props.email}</div>
-      <div className={styles.links}>
+      <ProfileSection>{props.bio}</ProfileSection>
+      <ProfileSection>{props.phone}</ProfileSection>
+      <ProfileSection>{props.email}</ProfileSection>
+      <ProfileSection
+        className={styles.links}
+        id="links-section"
+        data-test="some value"
+        aria-label="social-links"
+      >
         <Button href={props.githubUrl}>GitHub</Button>
         <Button href={props.linkedinUrl}>LinkedIn</Button>
         <Button href={props.twitterUrl}>Twitter</Button>
-      </div>
+      </ProfileSection>
     </div>
   );
 }
