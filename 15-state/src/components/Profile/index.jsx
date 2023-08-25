@@ -38,7 +38,7 @@ export default function Profile(props) {
   );
 }
 
-//state é um recurso do react que permite que tenhamos informações na tela que sejam renderizadas e atulazidas de forma dinamica de acordo com o javascript
+//State é um recurso do react que permite que tenhamos informações na tela que sejam renderizadas e atulazidas de forma dinamica de acordo com o javascript
 //Para refletir a mudança na tela, é preciso declarar uma variavel state, utilizando a função useState.
 //A convenção para usar o usestate é desestruturar e dentro vai ser passado 2 valores
 //O primeiro valor precisa ser o nome da variável com o valor
