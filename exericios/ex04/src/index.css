@@ -3,3 +3,18 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  min-height: 100vh;
+  display: grid;
+  text-align: center;
+  align-content: center;
+  color: white;
+  background-color: black;
+}
+
+button {
+  width: 150px;
+  padding: 10px;
+  margin: 2rem;
+}
