@@ -7,8 +7,8 @@ export default function App() {
 
   const addGames = ({ title, cover }) => {
     const id = Math.floor(Math.random() * 100000);
-    const game = { id, title, cover };
-    setGames((state) => [...state, game]);
+    gameList = { id, title, coverImage };
+    setGames((gameList) => [...gameList, games]);
   };
 
   const removeGame = (id) => {
