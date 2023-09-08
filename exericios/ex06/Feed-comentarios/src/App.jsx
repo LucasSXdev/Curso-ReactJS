@@ -2,16 +2,23 @@ import { useState } from "react";
 
 export default function App() {
   const [email, setEmail] = useState("");
-  const [Coment, setComent] = useState("");
+  const [content, setContent] = useState("");
   const [comments, setComments] = useState([]);
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
-    const newComent = { email, Coment };
-    setComments([...comments, newComent]);
+
+    const newComment = {
+      id: Math.floor(Math.random() * 100000),
+      author: email,
+      content: content,
+      atTime: new Date(),
+    };
+
+    setComments((state) => [newComment, ...state]);
 
     setEmail("");
-    setComent("");
+    setContent("");
   };
 
   return (
@@ -38,24 +45,25 @@ export default function App() {
         <label htmlFor="comentario">Comentario</label>
         <textarea
           id="comentario"
-          value={Coment}
-          onChange={(ev) => setComent(ev.target.value)}
+          value={content}
+          onChange={(ev) => setContent(ev.target.value)}
         ></textarea>
         <button type="submit">Enviar comentário</button>
       </form>
-      <div>
-        {comments.map((comment, index) => (
-          <div key={index} style={{ width: "30vw" }}>
-            <h4>Email:</h4>
-            <p>{comment.email}</p>
-            <p>{data.toLocaleString()}</p>
-            <h4>Comentário:</h4>
-            <p>{comment.Coment}</p>
-            <hr />
-          </div>
-        ))}
+      <div id="Comments">
+        <hr />
+        {comments.length > 0 ? (
+          comments.map((comment) => (
+            <div key={comment.id}>
+              <h3>{comment.author}</h3>
+              <p>{comment.content}</p>
+              <p>{comment.atTime.toLocaleString()}</p>
+            </div>
+          ))
+        ) : (
+          <p>Seja o primeiro a comentar!</p>
+        )}
       </div>
-      {comments.length === 0 && <p>Seja o primeiro a comentar</p>}
     </div>
   );
 }
