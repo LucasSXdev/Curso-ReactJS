@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+//É um hook que permite chamar uma função:
+//No momento da criação do componente.
+//Quando o estado do componente muda.
+//O useEffect pode observar e reagir a mudanças de estado de um componente
+//Recebe uma callback como primeiro parametro, essa vai ter alguma ação
+//O segundo parametro normalmente vai ser o componente que vai estar sendo observado pelo useEffect
+//Lembrar de sempre utilizar alguma coisa dentro do array de dependecia(segundo parametro)
+//Para fazer a limpeza no useEffect, basta colocar um retorno que deverá ser uma funçao de callback
 
-function App() {
-  const [count, setCount] = useState(0)
+import { useEffect, useState } from "react";
 
+export default function App() {
+  const [count, setCount] = useState(0);
+  const [count2, setCount2] = useState(0);
+
+  useEffect(() => {
+    alert("O efeito colateral foi ativado");
+  }, [count]);
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div>
+      <h2>Conhecendo o useEffect</h2>
+      <button onClick={() => setCount((state) => state + 1)}>
+        Contador:{count}
+      </button>
 
-export default App
+      <hr />
+      <button onClick={() => setCount2((count2) => count2 + 1)}>
+        Contador:{count2}
+      </button>
+    </div>
+  );
+}
