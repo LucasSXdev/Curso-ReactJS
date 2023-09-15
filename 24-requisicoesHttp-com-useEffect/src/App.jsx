@@ -1,20 +1,36 @@
+import { useEffect, useState } from "react";
+
 async function fetchPokemon() {
-  Response = await fetch("https://pokeapi.co/api/v2/pokemon");
-  const data = Response.json();
+  const response = await fetch("https://pokeapi.co/api/v2/pokemon/");
+  const data = await response.json();
   return data.results;
 }
 
-export default function App() {
+function App() {
   const [pokemon, setPokemon] = useState([]);
-  fetchPokemon().then((results) => {
-    console.log("requisição feita com sucesso");
-    console.log(results);
-    setPokemon(results);
-  });
+
+  useEffect(() => {
+    fetchPokemon().then((result) => {
+      console.log("Requisição realizada");
+      console.log(result);
+      setPokemon(result);
+    });
+  }, []);
+
   return (
-    <div>
-      <h2>Pokémon</h2>
-      {JSON.stringify(pokemon)}
+    <div className="app">
+      <div>
+        <h2>Pokémon</h2>
+        <ul className="pokemon">
+          {pokemon.map((mon) => (
+            <li key={mon.name}>
+              <span>{mon.name}</span>
+              <button>Ver detalhes</button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
+export default App;
