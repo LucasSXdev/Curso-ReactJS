@@ -34,3 +34,9 @@ function App() {
   );
 }
 export default App;
+
+/*
+1- primeiro precisamos criar uma função async para fazer a requisição para a api
+2-depois precisamos de um useState para renderizar o retorno da api na tela depois do carregamento do componente
+3-Para executar o código uma vez
+*/
