@@ -1,12 +1,11 @@
 import products from "../database.json";
-import Header from "../components/Header";
+
 import { Link } from "react-router-dom";
-import Products from "../dataBase.json";
 
 export default function Products() {
   return (
     <section>
-      <Header />
+      
       <h2>Todos os produtos</h2>
       <p>Confira todas as nossas ofertas.</p>
       <section className="products">
