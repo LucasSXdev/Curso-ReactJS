@@ -7,8 +7,7 @@ function App() {
 
 export default App;
 
-//Primeiro deve ser criado o um arquivo router para definir as rotas
-//Depois deve ser passado para o conteudo App que é o pricipal, o Routerprovider que tem um valor router(passar o arquivo router aqui)
-//Depois criar cada componente específico de cada rota para dentro do arquivo router
-//podemos usar a propriedade children dentro de nossas rotas, onde essas vao herdar da rota pai.
-//Quando usamos o Outlet isso quer dizer que as rotas filhas de outra principal estarao nesse lugar.
+//1-Para criarmos uma rota dinamica que vai redirecionar para uma url por ex, podemos colocar a sintaxe
+//no nosso router dessa forma path:"nomedarota/:rotadaurl" e associar um elemento a ela tambem
+//depois é só passar em um link a referencia dessa rota
+//2-No elemento acessamos o parametro atraves do hook Useparams
