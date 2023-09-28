@@ -9,7 +9,7 @@ export default function Header() {
         <Link className="menu-link" to="/">
           Início
         </Link>
-        <Link className="menu-link" to="/estoque">
+        <Link className="menu-link" to="/layout">
           Items
         </Link>
       </nav>
