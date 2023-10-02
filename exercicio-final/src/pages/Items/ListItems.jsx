@@ -1,7 +1,5 @@
-export default function ListItens() {
-  return (
-    <>
-      <h1>Todos os items</h1>
-    </>
-  );
+import ItemsTable from "../../Components/ItemsTable";
+
+export default function ListItems() {
+  return <ItemsTable />;
 }
