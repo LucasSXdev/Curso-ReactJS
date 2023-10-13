@@ -1,9 +1,5 @@
-import { container } from "./components/container";
+import styled from "styled-components";
 
-export default function App() {
-  return (
-    <>
-      <container></container>
-    </>
-  );
-}
+const Container = div.styled`
+  bacgrou
+`;
