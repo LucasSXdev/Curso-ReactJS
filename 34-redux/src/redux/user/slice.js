@@ -4,7 +4,7 @@ const initialState = {
   user: {
     id: 1,
     name: "Lucas de Souza",
-    age: "25",
+    age: 25,
   },
 };
 

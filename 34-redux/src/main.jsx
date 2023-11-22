@@ -1,14 +1,10 @@
 import React from "react";
-import { Provider } from "react-redux";
-import { render } from "react-dom"; // Certifique-se de que está usando a importação correta do react-dom
+import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-import store from "./redux/store";
+import { Provider } from "react-redux";
+import { store } from "./redux/store.js";
 
-const rootElement = document.getElementById("root");
-
-const root = render.createRoot(rootElement); // Corrigindo a importação
-
-root.render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
       <App />

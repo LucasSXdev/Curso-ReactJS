@@ -1,8 +1,9 @@
 import { useSelector } from "react-redux";
-import store from "./redux/store";
+import rootReducer from "./redux/rootReducer";
 
 export default function App() {
-  const user = useSelector((state) => state.user);
+  const { user } = useSelector((rootReducer) => rootReducer.user);
+
   return (
     <div>
       meu nome é {user.name} e tenho {user.age} anos
