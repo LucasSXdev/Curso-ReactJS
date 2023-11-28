@@ -17,17 +17,34 @@ export const userSlice = createSlice({
           address: null,
         },
       };
+    },
+    logoutUser: (state) => {
+      return {
+        ...state,
+        user: null,
+      };
+    },
 
-      logoutUser: (state) => {
-        return {
-          ...state,
-          user: null,
-        };
+    addAdress: (state, action) => {
+      if (action.payload.location === "" || action.payload.number === "") {
+        alert("preencha todos os campos");
+        return { ...state };
+      }
+
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          address: {
+            location: action.payload.location,
+            number: action.payload.number,
+          },
+        },
       };
     },
   },
 });
 
-export const { createUser, logoutUser } = userSlice.actions;
+export const { createUser, logoutUser, addAdress } = userSlice.actions;
 
 export default userSlice.reducer;
