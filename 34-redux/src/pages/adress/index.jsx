@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./adress.module.css";
 import { Header } from "../../components/header";
 import { Link } from "react-router-dom";
-import { useDispatch, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addAdress } from "../../redux/user/slice";
 
 export function Address() {

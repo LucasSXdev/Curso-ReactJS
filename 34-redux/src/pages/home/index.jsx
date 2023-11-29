@@ -23,7 +23,7 @@ export function Home() {
           <Link to="/painel" className={styles.link}>
             Painel
           </Link>
-          <Link to="/address" className={styles.link}>
+          <Link to="/adress" className={styles.link}>
             Meus endereços
           </Link>
         </nav>
